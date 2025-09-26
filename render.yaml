@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ferroai-cloud
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: FerroAI Cloud
+      - key: OPENAI_API_KEY
+        sync: false  # ponlo en el panel de Render si quieres NLU con GPT
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
